@@ -1,0 +1,47 @@
+﻿@using System.Linq
+
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var level = 1;
+    var ulClass = "header-main-nav";
+
+    var parent = CurrentPage.AncestorOrSelf(level);
+    var mainNavPages = parent.Children.Where("Visible && showInMainNav");
+    dynamic navSource = CurrentPage.AncestorOrSelf(level);
+
+    if (parent != null)
+    {
+        var homeSelected = parent.Id == CurrentPage.Id ? "selected" : "";
+
+        <nav class="header-main-nav" role="navigation">
+            <a class="btn-menu" href="#"><span class="icon-menu"></span></a>
+            <div class="menu">
+                <a href="#" class="btn-close"><span class="icon-close"></span></a>
+                <ul class="sf-menu" id="navbar">
+                    <li id="home" class="@Html.Raw(homeSelected)"><a href="@parent.Url ">Home</a></li>
+
+                    @foreach (var item in mainNavPages)
+                    {
+                        var selected = Array.IndexOf(CurrentPage.Path.Split(','), item.Id.ToString()) >= 0 ? "selected" : "";
+                        var itemChildren = item.Children();
+
+                        <li class="@Html.Raw(selected)">
+                            <a href="@item.Url">@item.Name</a>
+                            @if (itemChildren.Count() > 0)
+                            {
+                                <ul class="sub-menu">
+                                    @foreach (var innerItem in itemChildren.Where("Visible && showInMainNav"))
+                                    {
+                                        var subSelected = Array.IndexOf(CurrentPage.Path.Split(','), innerItem.Id.ToString()) >= 0 ? " class=\"selected\"" : "";
+                                        <li @Html.Raw(subSelected)><a href="@innerItem.Url">@innerItem.Name</a></li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    }
+}

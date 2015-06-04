@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+
+@{
+    Layout = "Global.cshtml";
+}
+
+@section headContent {}
+
+@section Content {
+    <div class="home-page">
+        <section id="hero" class="hero-slider-container">
+            @Html.Container(new Container()
+            {
+                Name = "heroSliderContainer",
+                Classes = "hero-slider-container",
+                ContainerRenderer = new WebBlocks.SandboxV7.CustomContainers.FlexsliderContainer(),
+                ContainerPermissions = new WebBlocks.Model.AllowedBlocks("HeroSlide")
+            })
+        </section>
+
+        @Html.Container(new Container()
+        {
+            Name = "homeMainContainer",
+            Tag = "section",
+            Attributes = new Dictionary<string, string> { { "id", "main-container" } },
+            WysiwygClass = "wysiwyg",
+            Classes = "main-container"
+        })
+</div>
+}

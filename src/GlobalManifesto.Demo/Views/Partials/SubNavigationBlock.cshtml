@@ -1,0 +1,25 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{	
+	WebBlocks.CssClasses.Add("sub-navigation-block");
+
+	var parentOrSelfTwo = CurrentPage.AncestorOrSelf(2);
+	var parentOrSelfThree = CurrentPage.AncestorOrSelf(3);
+	
+    if(parentOrSelfTwo.Children != null && parentOrSelfTwo.Children.Count() > 0) {	   
+        <h4 class="block-title">
+	        <a href="@parentOrSelfTwo.Url">
+		        @parentOrSelfTwo.Name
+	        </a>
+        </h4>	
+	    <ul>
+		    @foreach (var pageLink in parentOrSelfTwo.Children.Where("umbracoNaviHide != true")){
+			    var currentLoopPage =  CurrentPage.Id == pageLink.Id ? "selected" : "";
+									
+			    <li class="@currentLoopPage">
+				    <a href="@pageLink.Url">@pageLink.Name</a>
+			    </li>
+		    }
+	    </ul>
+    }		
+}

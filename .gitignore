@@ -1,0 +1,11 @@
+
+/src/GlobalManifesto.Demo/App_Data/packages
+/src/GlobalManifesto.Demo/App_Data/preview
+/src/GlobalManifesto.Demo/App_Data/TEMP
+/src/GlobalManifesto.Demo/App_Data/umbraco.config
+/src/GlobalManifesto.Demo/App_Data/55e028e3-0c5b-4188-9722-7d14b4bd12c0
+/src/GlobalManifesto.Demo/App_Data/cache
+/src/GlobalManifesto.Demo/App_Data/Logs
+/src/GlobalManifesto.Demo/App_Data/NuGetBackup
+/src/GlobalManifesto.Demo/bin
+/src/GlobalManifesto.Demo/obj

@@ -1,0 +1,27 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Thu Jun 04 20:29:47 2015
+
+   Source : C:\projects\Global-Manifesto\src\GlobalManifesto.Products\bin\
+     Dest : C:\projects\Global-Manifesto\src\GlobalManifesto.Products\App_Data\NuGetBackup\20150604-202947\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	C:\projects\Global-Manifesto\src\GlobalManifesto.Products\bin\
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :         0         0         0         0         0         0
+   Bytes :         0         0         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+   Ended : Thu Jun 04 20:29:48 2015

@@ -1,0 +1,59 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{
+    WebBlocks.CssClasses.Add("feature-block");
+    
+    IPublishedContent block = Umbraco.TypedContent(CurrentBlock.Id);
+    string containerName = "asideContainer";
+    
+    if(WebBlocks.CurrentContainer != null)
+    { 
+        containerName = WebBlocks.CurrentContainer.Name;
+    }
+
+    var mediaItem = Umbraco.TypedMedia(block.GetPropertyValue<int>("image"));
+    var image = mediaItem != null ? mediaItem.Url : "";
+    
+    string imageDimensions = containerName == "mainContainer" ? "?width=700&height=200&mode=crop" : "?width=275&height=150&mode=crop";
+    
+    if(containerName == "homeMainContainer")
+    {
+        imageDimensions = "?width=375&height=200&mode=crop";
+    }
+
+    var links = block.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("link");
+    var link = "";
+    
+    foreach (var item in links)
+    {
+        link = item.Url;
+    }
+}
+
+
+<h4 class="block-title">
+    @if (link != "")
+    {
+        <a href="@link">@Html.Raw(block.GetPropertyValue<string>("title"))</a>
+    }
+    else
+    {
+        <span>@Html.Raw(block.GetPropertyValue<string>("title"))</span>
+    }
+</h4>
+
+@if (image != "")
+{
+    var imageUrl = image + imageDimensions;
+
+    <div class="block-image">
+        @if (link != "")
+        {
+            <a href="@link"><img src="@imageUrl" alt="@block.Name" /></a>
+        }
+        else
+        {
+            <img src="@imageUrl" alt="@block.Name" />
+        }
+    </div>
+}

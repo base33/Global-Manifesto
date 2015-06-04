@@ -1,0 +1,25 @@
+﻿@inherits WebBlocks.ViewTemplates.WebBlocksTemplatePage
+
+@{
+    
+    
+    IPublishedContent block = Umbraco.TypedContent(CurrentBlock.Id);
+
+}
+
+@foreach(IPublishedContent product in Umbraco.TypedContent((int)CurrentBlock.productsRoot).Descendants("Product"))
+{
+    var url = CurrentPage.Url + product.UrlName;
+    <div class="feature-block" style="width:275px;display:inline-block">
+        <h4 class="block-title">
+            <a href="@url">@product.Name</a>
+        </h4>
+
+        <div class="block-image">
+
+            <a href="@url"><img src="@(Umbraco.Media(product.GetPropertyValue<int>("image")).Url)?width=275&height=150&mode=crop" alt="@block.Name" /></a>
+
+        </div>
+    </div>
+}
+
