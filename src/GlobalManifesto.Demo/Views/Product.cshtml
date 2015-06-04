@@ -1,10 +1,10 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<GlobalManifesto.Products.Models.ProductRenderModel>
+﻿@inherits ConcreteContentTypes.Core.ViewTemplates.ConcreteViewPage<Product>
 @{
     Layout = "Global.cshtml";
 }
 
 @section Content {
     <div class="content-page-full-width">
-        @Model.Product.Name
+        @Model.Name
     </div>
 }

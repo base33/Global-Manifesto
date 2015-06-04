@@ -63,6 +63,15 @@
     <Reference Include="cms">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\cms.dll</HintPath>
     </Reference>
+    <Reference Include="ConcreteContentTypes.Core">
+      <HintPath>..\..\lib\ConcreteContentTypes.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ConcreteContentTypes.LinqToExamine">
+      <HintPath>..\..\lib\ConcreteContentTypes.LinqToExamine.dll</HintPath>
+    </Reference>
+    <Reference Include="ConcreteContentTypes.WebBlocks">
+      <HintPath>..\..\lib\ConcreteContentTypes.WebBlocks.dll</HintPath>
+    </Reference>
     <Reference Include="controls">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\controls.dll</HintPath>
     </Reference>
@@ -294,6 +303,7 @@
     <Content Include="Views\Product.cshtml" />
     <Content Include="Views\ProductListing.cshtml" />
     <Content Include="Views\Partials\ProductListingBlock.cshtml" />
+    <Content Include="config\ConcreteContentTypes.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -320,6 +330,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomContainers\FlexsliderContainer.cs" />
     <Compile Include="CustomContainers\YouTubeChannelContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

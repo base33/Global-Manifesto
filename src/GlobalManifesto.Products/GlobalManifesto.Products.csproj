@@ -64,6 +64,16 @@
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\cms.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ConcreteContentTypes.Core">
+      <HintPath>..\..\lib\ConcreteContentTypes.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ConcreteContentTypes.LinqToExamine">
+      <HintPath>..\..\lib\ConcreteContentTypes.LinqToExamine.dll</HintPath>
+    </Reference>
+    <Reference Include="ConcreteContentTypes.WebBlocks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\ConcreteContentTypes.WebBlocks.dll</HintPath>
+    </Reference>
     <Reference Include="controls">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\controls.dll</HintPath>
       <Private>True</Private>
@@ -255,8 +265,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Examine\Product.cs" />
-    <Compile Include="Models\ProductRenderModel.cs" />
+    <Compile Include="Models\Base.cs" />
+    <Compile Include="Models\BlockBase.cs" />
+    <Compile Include="Models\BlocksFolder.cs" />
+    <Compile Include="Models\ContentPage.cs" />
+    <Compile Include="Models\ContourBlock.cs" />
+    <Compile Include="Models\FeatureBlock.cs" />
+    <Compile Include="Models\HeadingBlock.cs" />
+    <Compile Include="Models\HeroSlide.cs" />
+    <Compile Include="Models\HomePage.cs" />
+    <Compile Include="Models\Navigation.cs" />
+    <Compile Include="Models\Partials\Product.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductListing.cs" />
+    <Compile Include="Models\Productlistingblock.cs" />
+    <Compile Include="Models\RenderModels\ProductRenderModel.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\RedirectsUrlStructure.cs" />
+    <Compile Include="Models\RelatedLinksBlock.cs" />
+    <Compile Include="Models\Seo.cs" />
+    <Compile Include="Models\SubNavigationBlock.cs" />
+    <Compile Include="Models\WebBlocksPage.cs" />
     <Compile Include="ProductContentFinder.cs" />
     <Compile Include="ProductListingController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

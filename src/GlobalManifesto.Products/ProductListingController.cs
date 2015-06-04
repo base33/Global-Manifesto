@@ -1,5 +1,4 @@
-﻿using GlobalManifesto.Products.Examine;
-using GlobalManifesto.Products.Models;
+﻿using GlobalManifesto.Products.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,27 +13,27 @@ namespace GlobalManifesto.Products
 {
     public class ProductListingController : RenderMvcController
     {
-        public override ActionResult Index(Umbraco.Web.Models.RenderModel model)
+        public override ActionResult Index(RenderModel model)
         {
             var nodeUrl = model.Content.Url.Split(new [] { '/' }, StringSplitOptions.RemoveEmptyEntries);
             var currentUrl = Request.Url.AbsolutePath.Split(new [] { '/' }, StringSplitOptions.RemoveEmptyEntries);
 
             if(currentUrl.Length > nodeUrl.Length)
             {
-                var productContent = getProductByName(currentUrl.Last());
+                var product = getProductByName(currentUrl.Last());
 
-                if(productContent != null)
-                    return View("Product", new ProductRenderModel(model.Content, productContent));
+				if (product != null)
+				{
+					return View("Product", new ProductRenderModel(new ProductListing(model.Content), product));
+				}
             }
 
             return base.Index(model);
         }
 
-        protected IPublishedContent getProductByName(string productUrlName)
+        protected Product getProductByName(string productUrlName)
         {
-            Product product = new Index<Product>().Where(c => c.Name == productUrlName).FirstOrDefault();
-
-            return product != null ? UmbracoContext.ContentCache.GetById(product.Id) : null;
+            return new Index<Product>().Where(c => c.Name == productUrlName).FirstOrDefault();
         }
     }
 }
