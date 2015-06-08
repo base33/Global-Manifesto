@@ -24,7 +24,7 @@ namespace GlobalManifesto.Products.Models
 		/// </summary>
 		
 		[Field("image")]
-		public IPublishedContent Image { get; set; } 
+		public string Image { get; set; } 
 		
 		public Product()
 			: base()
@@ -45,7 +45,7 @@ namespace GlobalManifesto.Products.Models
 		{
 			base.Init();
 						
-			this.Image = Content.GetPropertyValue<IPublishedContent>("image");
+			this.Image = Content.GetPropertyValue<string>("image");
 			
 		}
 

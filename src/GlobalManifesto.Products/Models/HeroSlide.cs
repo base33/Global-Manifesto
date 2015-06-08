@@ -24,7 +24,7 @@ namespace GlobalManifesto.Products.Models
 		/// </summary>
 		[Required] 
 		[Field("image")]
-		public IPublishedContent Image { get; set; } 		
+		public string Image { get; set; } 		
 		
 		private IPublishedContent _link = null;
 		public IPublishedContent Link
@@ -66,7 +66,7 @@ namespace GlobalManifesto.Products.Models
 		{
 			base.Init();
 						
-			this.Image = Content.GetPropertyValue<IPublishedContent>("image");
+			this.Image = Content.GetPropertyValue<string>("image");
 			
 		}
 

@@ -31,7 +31,7 @@ namespace GlobalManifesto.Products.Models
 		/// </summary>
 		
 		[Field("image")]
-		public IPublishedContent Image { get; set; } 		
+		public string Image { get; set; } 		
 		
 		/// <summary>
 		/// 
@@ -61,7 +61,7 @@ namespace GlobalManifesto.Products.Models
 						
 			this.Title = Content.GetPropertyValue<string>("title");
 						
-			this.Image = Content.GetPropertyValue<IPublishedContent>("image");
+			this.Image = Content.GetPropertyValue<string>("image");
 						
 			this.content = Content.GetPropertyValue<IHtmlString>("content");
 			
