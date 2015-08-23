@@ -143,7 +143,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RJP.MultiUrlPicker">
-      <HintPath>..\..\..\ConcreteContentTypes\lib\RJP.MultiUrlPicker.dll</HintPath>
+      <HintPath>..\..\lib\RJP.MultiUrlPicker.dll</HintPath>
     </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\SQLCE4Umbraco.dll</HintPath>
