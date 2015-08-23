@@ -403,6 +403,9 @@
   </Target>
   <Import Project="..\packages\UmbracoCms.7.2.6\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.2.6\build\UmbracoCms.targets')" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)..\lib\*.dll" "$(ProjectDir)bin" /R /Y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
