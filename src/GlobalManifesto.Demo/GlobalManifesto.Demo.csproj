@@ -63,14 +63,17 @@
     <Reference Include="cms">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\cms.dll</HintPath>
     </Reference>
-    <Reference Include="ConcreteContentTypes.Core">
-      <HintPath>..\..\lib\ConcreteContentTypes.Core.dll</HintPath>
+    <Reference Include="ConcreteContentTypes.Core, Version=0.1.0.14, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ConcreteContentTypes.Core.0.1.0-beta-000014\lib\net45\ConcreteContentTypes.Core.dll</HintPath>
     </Reference>
-    <Reference Include="ConcreteContentTypes.LinqToExamine">
-      <HintPath>..\..\lib\ConcreteContentTypes.LinqToExamine.dll</HintPath>
+    <Reference Include="ConcreteContentTypes.LinqToExamine, Version=0.1.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ConcreteContentTypes.Addon.LinqToExamine.0.1.0-beta-000005\lib\net45\ConcreteContentTypes.LinqToExamine.dll</HintPath>
     </Reference>
-    <Reference Include="ConcreteContentTypes.WebBlocks">
-      <HintPath>..\..\lib\ConcreteContentTypes.WebBlocks.dll</HintPath>
+    <Reference Include="ConcreteContentTypes.WebBlocks, Version=0.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ConcreteContentTypes.Addon.WebBlocks.0.1.0-beta-000002\lib\net45\ConcreteContentTypes.WebBlocks.dll</HintPath>
     </Reference>
     <Reference Include="controls">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\controls.dll</HintPath>

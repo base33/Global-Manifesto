@@ -65,14 +65,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ConcreteContentTypes.Core">
-      <HintPath>..\..\lib\ConcreteContentTypes.Core.dll</HintPath>
+      <HintPath>..\packages\ConcreteContentTypes.Core.0.1.0-beta-000014\lib\net45\ConcreteContentTypes.Core.dll</HintPath>
     </Reference>
     <Reference Include="ConcreteContentTypes.LinqToExamine">
-      <HintPath>..\..\lib\ConcreteContentTypes.LinqToExamine.dll</HintPath>
+      <HintPath>..\packages\ConcreteContentTypes.Addon.LinqToExamine.0.1.0-beta-000005\lib\net45\ConcreteContentTypes.LinqToExamine.dll</HintPath>
     </Reference>
-    <Reference Include="ConcreteContentTypes.WebBlocks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\ConcreteContentTypes.WebBlocks.dll</HintPath>
+    <Reference Include="ConcreteContentTypes.WebBlocks">
+      <HintPath>..\packages\ConcreteContentTypes.Addon.WebBlocks.0.1.0-beta-000002\lib\net45\ConcreteContentTypes.WebBlocks.dll</HintPath>
     </Reference>
     <Reference Include="controls">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\controls.dll</HintPath>
@@ -142,6 +141,9 @@
     <Reference Include="Remotion.Linq">
       <HintPath>..\packages\Remotion.Linq.1.15.15.0\lib\portable-net45+wp80+wpa81+win\Remotion.Linq.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="RJP.MultiUrlPicker">
+      <HintPath>..\..\..\ConcreteContentTypes\lib\RJP.MultiUrlPicker.dll</HintPath>
     </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.2.6\lib\SQLCE4Umbraco.dll</HintPath>
@@ -265,27 +267,32 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Base.cs" />
-    <Compile Include="Models\BlockBase.cs" />
-    <Compile Include="Models\BlocksFolder.cs" />
-    <Compile Include="Models\ContentPage.cs" />
-    <Compile Include="Models\ContourBlock.cs" />
-    <Compile Include="Models\FeatureBlock.cs" />
-    <Compile Include="Models\HeadingBlock.cs" />
-    <Compile Include="Models\HeroSlide.cs" />
-    <Compile Include="Models\HomePage.cs" />
-    <Compile Include="Models\Navigation.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductListing.cs" />
-    <Compile Include="Models\Productlistingblock.cs" />
+    <Compile Include="Helpers\ContentLocationHelper.cs" />
+    <Compile Include="Models\Content\Base.cs" />
+    <Compile Include="Models\Content\BlockBase.cs" />
+    <Compile Include="Models\Content\BlocksFolder.cs" />
+    <Compile Include="Models\Content\ContentPage.cs" />
+    <Compile Include="Models\Content\ContourBlock.cs" />
+    <Compile Include="Models\Content\FeatureBlock.cs" />
+    <Compile Include="Models\Content\HeadingBlock.cs" />
+    <Compile Include="Models\Content\HeroSlide.cs" />
+    <Compile Include="Models\Content\HomePage.cs" />
+    <Compile Include="Models\Content\Navigation.cs" />
+    <Compile Include="Models\Content\Product.cs" />
+    <Compile Include="Models\Content\ProductListing.cs" />
+    <Compile Include="Models\Content\Productlistingblock.cs" />
+    <Compile Include="Models\Content\Products.cs" />
+    <Compile Include="Models\Content\RedirectsUrlStructure.cs" />
+    <Compile Include="Models\Content\RelatedLinksBlock.cs" />
+    <Compile Include="Models\Content\Seo.cs" />
+    <Compile Include="Models\Content\SubNavigationBlock.cs" />
+    <Compile Include="Models\Content\UmbracoContent.cs" />
+    <Compile Include="Models\Content\WebBlocksPage.cs" />
+    <Compile Include="Models\Media\File.cs" />
+    <Compile Include="Models\Media\Folder.cs" />
+    <Compile Include="Models\Media\Image.cs" />
+    <Compile Include="Models\Media\UmbracoMedia.cs" />
     <Compile Include="Models\RenderModels\ProductRenderModel.cs" />
-    <Compile Include="Models\Products.cs" />
-    <Compile Include="Models\RedirectsUrlStructure.cs" />
-    <Compile Include="Models\RelatedLinksBlock.cs" />
-    <Compile Include="Models\Seo.cs" />
-    <Compile Include="Models\SubNavigationBlock.cs" />
-    <Compile Include="Models\UmbracoContent.cs" />
-    <Compile Include="Models\WebBlocksPage.cs" />
     <Compile Include="ProductContentFinder.cs" />
     <Compile Include="ProductListingController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

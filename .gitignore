@@ -9,3 +9,6 @@
 /src/GlobalManifesto.Demo/App_Data/NuGetBackup
 /src/GlobalManifesto.Demo/bin
 /src/GlobalManifesto.Demo/obj
+bin
+obj
+/src/packages

@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
 @{
-    IPublishedContent footerSource = CurrentPage.AncestorOrSelf(1);
+	IPublishedContent footerSource = GlobalManifesto.Products.Helpers.ContentLocationHelper.GetLocalRoot(Model.Content);
     var footerLinks = footerSource.GetPropertyValue<RJP.MultiUrlPicker.Models.MultiUrls>("footerLinks");
 }
 
@@ -11,7 +11,7 @@
 
 @helper loadLinks(RJP.MultiUrlPicker.Models.MultiUrls links)
 {
-    if (links.Any())
+    if (links != null && links.Any())
     {
         foreach (var link in links)
         {
